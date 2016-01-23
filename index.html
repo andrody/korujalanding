@@ -47,7 +47,7 @@
                 <ul class="we-create animated fadeInUp delay-1s">
                     <li>Nós fazemos websites, apps, interfaces e soluções em hardware.</li>
                 </ul>
-                <a class="link animated fadeInUp delay-1s" href="#service">Descubra</a>
+                <a class="link animated fadeInUp delay-1s slide-btn" href="#service">Descubra</a>
             </div>
     </div>
     </header>
@@ -79,7 +79,7 @@
                 <div class="col-lg-4 col-sm-6 wow fadeInLeft delay-05s">
                     <div class="service-list">
                         <div class="service-list-col1">
-                            <i class="fa-paw"></i>
+                            <i class="fa-file-code-o"></i>
                         </div>
                         <div class="service-list-col2">
                             <h3>Aplicações Web</h3>
@@ -88,7 +88,7 @@
                     </div>
                     <div class="service-list">
                         <div class="service-list-col1">
-                            <i class="fa-gear"></i>
+                            <i class="fa-cogs"></i>
                         </div>
                         <div class="service-list-col2">
                             <h3>Projetos em Hardware</h3>
@@ -106,7 +106,7 @@
                     </div>
                 </div>
                 <figure class="col-lg-8 col-sm-6  text-right wow fadeInUp delay-02s">
-                    <img src="img/macbook-pro.png" alt="">
+                    <img src="img/macprobanner.png" alt="">
                 </figure>
             </div>
         </div>
@@ -117,7 +117,7 @@
         <div class="container">
             <div class="row">
                 <figure class="col-lg-5 col-sm-4 wow fadeInLeft">
-                    <img src="img/iphone.png" alt="">
+                    <img src="img/ninjagooiphone.png" alt="">
                 </figure>
                 <div class="col-lg-7 col-sm-8 featured-work">
                     <h2>Por que a Koruja?</h2>
@@ -507,21 +507,25 @@
     </footer>
     <script>
     document.getElementById('send').onclick = function() {
-        
-        
 
-        if ($('#yourName').val() == "Seu Nome *" || $('#yourEmail').val() == "Seu E-mail *" || $('#message').val() == "Sua Menssagem *" || $('#message').val() == ""){
 
-            $( ".enviado" ).css( "display", "none");
-            $( ".erro" ).css( "display", "block");
-            
-        }else{
-            emailjs.send("gmail","korujacontact",{name: $('#yourName').val(), email: $('#yourEmail').val(), menssagem: $('#message').val() });
-        
-            $( ".enviado" ).css( "display", "block");
-            $( ".erro" ).css( "display", "none");
+
+        if ($('#yourName').val() == "Seu Nome *" || $('#yourEmail').val() == "Seu E-mail *" || $('#message').val() == "Sua Menssagem *" || $('#message').val() == "") {
+
+            $(".enviado").css("display", "none");
+            $(".erro").css("display", "block");
+
+        } else {
+            emailjs.send("gmail", "korujacontact", {
+                name: $('#yourName').val(),
+                email: $('#yourEmail').val(),
+                menssagem: $('#message').val()
+            });
+
+            $(".enviado").css("display", "block");
+            $(".erro").css("display", "none");
         }
-        
+
     };
     </script>
     <script type="text/javascript">
@@ -529,9 +533,11 @@
         $('#test').scrollToFixed();
         $('.res-nav_click').click(function() {
             $('.main-nav').slideToggle();
+
             return false
 
         });
+
 
     });
     </script>
@@ -551,6 +557,21 @@
     $(window).load(function() {
 
         $('.main-nav li a').bind('click', function(event) {
+            var $anchor = $(this);
+
+            $('html, body').stop().animate({
+                scrollTop: $($anchor.attr('href')).offset().top - 102
+            }, 1500, 'easeInOutExpo');
+            /*
+            if you don't want to use the easing effects:
+            $('html, body').stop().animate({
+                scrollTop: $($anchor.attr('href')).offset().top
+            }, 1000);
+            */
+            event.preventDefault();
+        });
+
+        $('.slide-btn').bind('click', function(event) {
             var $anchor = $(this);
 
             $('html, body').stop().animate({
