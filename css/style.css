@@ -15,6 +15,21 @@
 
 /* Clear Floated Elements
 ---------------------------------*/
+
+.enviado{
+	float: right;
+    color: green;
+    font-size: 1.1em;
+    display: none;
+}
+
+.erro{
+	float: right;
+    color: red;
+    font-size: 1.1em;
+    display: none;
+}
+
 .clear {
   clear: both;
   display: block;

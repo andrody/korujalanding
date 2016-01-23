@@ -27,6 +27,12 @@
     <script src="js/html5shiv.js"></script>
     <script src="js/html5element.js"></script>
 <![endif]-->
+    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script type="text/javascript">
+    (function() {
+        emailjs.init("user_RKG98PMqgzAbVKy2XCiVY");
+    })();
+    </script>
 </head>
 
 <body>
@@ -446,20 +452,20 @@
             <div class="row">
                 <div class="col-lg-6 col-sm-7 wow fadeInLeft">
                     <div class="contact-info-box address clearfix">
-                        <h3><i class=" icon-map-marker"></i>Address:</h3>
-                        <span>308 Negra Arroyo Lane<br>Albuquerque, New Mexico, 87111.</span>
+                        <h3><i class=" icon-map-marker"></i>Endereço:</h3>
+                        <span>Rua Santa Rita, 1074<br>Novo Pabussú, Caucaia -CE.</span>
                     </div>
                     <div class="contact-info-box phone clearfix">
-                        <h3><i class="fa-phone"></i>Phone:</h3>
-                        <span>1-800-BOO-YAHH</span>
+                        <h3><i class="fa-phone"></i>Fone:</h3>
+                        <span>+55 (85) 98795-2292</span>
                     </div>
                     <div class="contact-info-box email clearfix">
                         <h3><i class="fa-pencil"></i>email:</h3>
-                        <span>hello@knightstudios.com</span>
+                        <span>koruja.studios@gmail.com</span>
                     </div>
                     <div class="contact-info-box hours clearfix">
-                        <h3><i class="fa-clock-o"></i>Hours:</h3>
-                        <span><strong>Monday - Thursday:</strong> 10am - 6pm<br><strong>Friday:</strong> People work on Fridays now?<br><strong>Saturday - Sunday:</strong> Best not to ask.</span>
+                        <h3><i class="fa-clock-o"></i>Horário:</h3>
+                        <span><strong>Segunda - Quinta:</strong> 08:00 - 18:00<br><strong>Sexta:</strong> Pessoas trabalham na sexta agora?<br><strong>Sábado - Domingo:</strong> Melhor nem perguntar.</span>
                     </div>
                     <ul class="social-link">
                         <li class="twitter"><a href="#"><i class="fa-twitter"></i></a></li>
@@ -471,10 +477,16 @@
                 </div>
                 <div class="col-lg-6 col-sm-5 wow fadeInUp delay-05s">
                     <div class="form">
-                        <input class="input-text" type="text" name="" value="Your Name *" onfocus="if(this.value==this.defaultValue)this.value='';" onblur="if(this.value=='')this.value=this.defaultValue;">
-                        <input class="input-text" type="text" name="" value="Your E-mail *" onfocus="if(this.value==this.defaultValue)this.value='';" onblur="if(this.value=='')this.value=this.defaultValue;">
-                        <textarea class="input-text text-area" cols="0" rows="0" onfocus="if(this.value==this.defaultValue)this.value='';" onblur="if(this.value=='')this.value=this.defaultValue;">Your Message *</textarea>
-                        <input class="input-btn" type="submit" value="send message">
+                        <input id="yourName" class="input-text" type="text" name="" value="Seu Nome *" onfocus="if(this.value==this.defaultValue)this.value='';" onblur="if(this.value=='')this.value=this.defaultValue;">
+                        <input id="yourEmail" class="input-text" type="text" name="" value="Seu E-mail *" onfocus="if(this.value==this.defaultValue)this.value='';" onblur="if(this.value=='')this.value=this.defaultValue;">
+                        <textarea id="message" class="input-text text-area" cols="0" rows="0" onfocus="if(this.value==this.defaultValue)this.value='';" onblur="if(this.value=='')this.value=this.defaultValue;">Sua Menssagem *</textarea>
+                        <input id="send" class="input-btn" type="submit" value="Enviar Menssagem">
+                        <div class="enviado">
+                            Pronto! Agradecemos o contato!
+                        </div>
+                        <div class="erro">
+                            Você digitou algo errado!
+                        </div>
                     </div>
                 </div>
             </div>
@@ -493,6 +505,25 @@
         You can buy this theme without footer links online at: http://bootstraptaste.com/buy/?theme=Knight
     -->
     </footer>
+    <script>
+    document.getElementById('send').onclick = function() {
+        
+        
+
+        if ($('#yourName').val() == "Seu Nome *" || $('#yourEmail').val() == "Seu E-mail *" || $('#message').val() == "Sua Menssagem *" || $('#message').val() == ""){
+
+            $( ".enviado" ).css( "display", "none");
+            $( ".erro" ).css( "display", "block");
+            
+        }else{
+            emailjs.send("gmail","korujacontact",{name: $('#yourName').val(), email: $('#yourEmail').val(), menssagem: $('#message').val() });
+        
+            $( ".enviado" ).css( "display", "block");
+            $( ".erro" ).css( "display", "none");
+        }
+        
+    };
+    </script>
     <script type="text/javascript">
     $(document).ready(function(e) {
         $('#test').scrollToFixed();
