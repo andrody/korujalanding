@@ -742,8 +742,9 @@ border: 2px solid #fff;
 ---------------------------------*/
 
 .footer{
-	background:url(../img/pw_maze_black_2X.png) left top repeat;
+	background:url(../img/header-bg.png) left top repeat;
 	padding:35px 0 35px;
+	background-color: #3E466E;
 }
 .footer-logo{
 	margin:15px auto 35px;
@@ -756,7 +757,7 @@ border: 2px solid #fff;
 	text-align:center;
 }
 .copyright a{
-	color:#7cc576;
+	color:#D6612B;
 	font-weight:600;
 	text-decoration: none;
 	transition:all 0.3s ease-in-out;
