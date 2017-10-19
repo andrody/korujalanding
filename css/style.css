@@ -8,6 +8,38 @@
  
 /* CSS Document */
 
+@font-face {
+    font-family: 'icomoon';
+    src:    url('../fonts/icomoon.eot?sa2rwt');
+    src:    url('../fonts/icomoon.eot?sa2rwt#iefix') format('embedded-opentype'),
+        url('../fonts/icomoon.ttf?sa2rwt') format('truetype'),
+        url('../fonts/icomoon.woff?sa2rwt') format('woff'),
+        url('../fonts/icomoon.svg?sa2rwt#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-korujalogo:before {
+    content: "\e900";
+}
+
+
+
 /* Float Elements 
 ---------------------------------*/
 .fl-lt {float:left;}
@@ -367,6 +399,50 @@ color: #fff;
 	padding-left:15px;
 }
 
+.koruja-white {
+    transition: all 200ms;
+    font-size: 60px;
+    color: white;
+}
+
+.koruja-black-title {
+	transition: all 200ms;
+    font-size: 45px;
+    color: #222222;
+}
+
+.koruja-black-title:hover {
+	color: #d6612b;
+	text-shadow: 0 0 0 rgba(255,255,255,1) , 0 0 0 rgba(255,255,255,1) , 0 0 30px rgba(255,255,255,1) , 0 0 40px #D6612B, 0 0 70px #D6612B, 0 0 80px #D6612B, 0 0 100px #D6612B;
+}
+
+.koruja-white:hover {
+	text-shadow: 0 0 0 rgba(255,255,255,1) , 0 0 0 rgba(255,255,255,1) , 0 0 30px rgba(255,255,255,1) , 0 0 40px #D6612B, 0 0 70px #D6612B, 0 0 80px #D6612B, 0 0 100px #D6612B;
+
+}
+
+.koruja-white-title {
+	transition: all 200ms;
+    font-size: 100px;
+    color: white;
+}
+
+.koruja-white-title:hover {
+	text-shadow: 0 0 0 rgba(255,255,255,1) , 0 0 0 rgba(255,255,255,1) , 0 0 30px rgba(255,255,255,1) , 0 0 40px #D6612B, 0 0 70px #D6612B, 0 0 80px #D6612B, 0 0 100px #D6612B;
+}
+
+.no-underline:hover {
+	text-decoration: none;
+}
+
+.no-underline:active {
+	text-decoration: none;
+}
+
+.no-underline:focus {
+	text-decoration: none;
+}
+
 .Portfolio-box{
 	text-align:center;
 	margin-bottom:30px;
@@ -377,6 +453,8 @@ color: #fff;
 	padding:0;
 }
 .Portfolio-box img{
+	object-fit: cover;
+    width: 100%;
 	margin-bottom:25px;
 	transition:all 0.3s ease-in-out;
 	-moz-transition:all 0.3s ease-in-out;
@@ -510,12 +588,16 @@ border: 2px solid #fff;
 /* Team
 ---------------------------------*/
 .team-leader-block{
+    justify-content: space-between;
+    flex-wrap: wrap;
+    display: flex;
 	max-width:993px;
 	margin:0 auto;
 }
 .team-leader-box{
+    margin: 19px;
+    flex: 0 0 21%;
 	width:20%;
-	margin-right: 3.82979%;
 	height: 490px;
 	overflow: hidden;
 	text-align: center;
@@ -559,6 +641,12 @@ border: 2px solid #fff;
 	display:block;
 	border-radius:50%;
 }
+
+.isotope-item:hover {
+    transition: all 500ms;
+    box-shadow: 0px 0px 10px #666;
+}
+
 .team-leader ul{
 	display:block;
 	opacity:0;
@@ -650,7 +738,7 @@ border: 2px solid #fff;
 	font-style:normal;
 	font-size:18px;
 	color:#222222;
-	font-family: 'FontAwesome';
+	font-family: 'FontAwesome' !important;
 	font-weight:normal;
 	margin-right:7px;
 }
