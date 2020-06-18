@@ -1,6 +1,6 @@
 <p align="center">
   <a href="http://koruja.net">
-    <img alt="Koruja" src="https://cdn.dribbble.com/users/730703/screenshots/11076868/media/808cc608025cb7a5a2903a300f4aaafc.jpg" width="60" />
+    <img alt="Koruja" src="https://cdn.dribbble.com/users/730703/screenshots/11076868/media/808cc608025cb7a5a2903a300f4aaafc.jpg" width="120" />
   </a>
 </p>
 <h1 align="center">
